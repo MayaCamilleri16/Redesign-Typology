@@ -1,0 +1,450 @@
+/* Add this CSS to your existing styles or create a new style block */
+.navbar {
+  padding: 5px 10px; /* Adjust the padding as needed */
+  margin-bottom: 40px;
+}
+
+.navbar-nav-left {
+  margin-right: 10px; /* Add margin between left side elements */
+}
+
+.navbar-brand-center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar-nav-right {
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* Adjust the margin as needed */
+}
+
+.navbar-nav-right .navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.navbar-nav-right .navbar-nav li {
+  list-style: none;
+  margin: 0;
+}
+
+.navbar-nav-left .nav-link.dropdown-toggle::after {
+  display: none; /* Remove the arrow */
+}
+
+.navbar-nav-left .nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Show the dropdown on hover */
+}
+
+
+/* Add this CSS to your existing styles or create a new style block */
+.navbar-brand.navbar-brand-center.menu-center {
+  font-size: 28px; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+  font-family: 'Calibiri', sans-serif; /* Set the font family to Maven Pro */
+  margin-right: 300px; /* Adjust the right margin as needed */
+}
+
+/* Style for the additional images */
+.additional-images {
+  position: absolute;
+  top: 0;
+  right: -330px;
+  margin-top: -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.additional-images img {
+  max-width: 30%;
+  height: auto;
+  margin-bottom: 10px;
+  filter: blur(5px); /* Initial blur effect */
+  transition: filter 0.3s ease-in-out; /* Transition for blur effect */
+}
+
+.additional-images:hover {
+  opacity: 1; /* Show the images on hover */
+}
+
+/* Adjusted styles for the second image */
+.additional-images img:nth-child(2) {
+  max-width: 24%;
+}
+
+/* Remove blur effect on hover */
+.additional-images:hover img {
+  filter: blur(0);
+}
+
+/* Style for the "View Item" button */
+.view-item-button {
+  background-color: black;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Position the "View Item" button */
+.view-item-button:hover {
+  background-color: #333; /* Darker background on hover */
+}
+
+
+
+
+/* Add this CSS to your existing styles or create a new style block */
+
+.button-container {
+  text-align: center;
+  margin-top: 20px !important;
+}
+
+.explore-button {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 13px;
+  font-weight: Regular;
+  text-decoration: underline;
+  cursor: pointer;
+  padding-left: -100px;
+  margin-left: -437px;  /* Remove padding */
+  border: none; /* Remove border */
+  background: none; /* Remove background */
+  outline: none; /* Remove outline */
+}
+
+.col-md-6 {
+  position: relative;
+  z-index: 1; /* Ensure the carousel appears above the footer */
+}
+
+.col-md-6 {
+  position: relative;
+  z-index: 1; /* Ensure the carousel appears above the footer */
+}
+
+.footer {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Maven Pro', sans-serif; /* Use Maven Pro font */
+  overflow: hidden;
+  margin-top: 20px; /* Add margin to ensure it doesn't overlap with the carousel */
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  word-spacing: 10px; /* Adjust space between words */
+  animation: marquee 20s linear infinite; /* Increased duration for a smoother effect */
+}
+
+@keyframes marquee {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+/* Style for the additional images */
+.additional-images {
+  position: absolute;
+  top: 0;
+  right: -330px;
+  margin-top: -1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.additional-images img {
+  max-width: 30%;
+  height: auto;
+  margin-bottom: 10px;
+  filter: blur(5px); /* Initial blur effect */
+  transition: filter 0.3s ease-in-out; /* Transition for blur effect */
+}
+
+.additional-images:hover {
+  opacity: 1; /* Show the images on hover */
+}
+
+/* Adjusted styles for the second image */
+.additional-images img:nth-child(2) {
+  max-width: 24%;
+}
+
+/* Remove blur effect on hover */
+.additional-images:hover img {
+  filter: blur(0);
+}
+
+/* Style for the "View Product" button */
+.view-product-button {
+  background-color: black;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Position the "View Product" button */
+.view-product-button:hover {
+  background-color: #333; /* Darker background on hover */
+}
+
+
+
+.add-favourites,
+.add-cart,
+.searchIconDiv {
+  margin-right: 30px; /* Add margin between icons */
+}
+
+.add-favourites__icon {
+  font-size: 25px; /* Adjust icon size as needed */
+}
+
+.add-cart svg {
+  vertical-align: middle; /* Align the cart icon vertically */
+}
+
+.nav-item {
+  margin-right: 10px; /* Add margin between nav items */
+}
+
+.title-left {
+  margin-left: 5%;
+  margin-top: 10vh;
+  margin-bottom: 20px;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.header-left {
+  margin-left: 3%;
+}
+
+.body-text p {
+  font-family: 'Roboto Mono', monospace; /* Set the font family for header and body */
+  text-align: left; /* Align text to the left */
+}
+
+.body-text {
+  margin-top: 20px; /* Adjust the margin as needed */
+  padding-left: 8%; /* Add some left padding for better alignment */
+}
+
+/* Optional: Add max-width for better responsiveness */
+.carousel-inner img {
+  max-width: 45%; /* Adjust the max-width as needed */
+}
+
+.bestsellers-header {
+  font-family: 'Maven Pro', sans-serif;
+  font-weight: bold;
+  font-size: 35px;
+  margin-top: 60px; /* Adjusted margin-top to place it below the footer */
+  margin-right: 1210px;
+  float: right; /* Float the header to the right */
+}
+
+  /* Style for the image container */
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+/* Style for each image box */
+.image-box {
+    border: 1px solid #000; /* Border color */
+    margin: 20px; /* Adjust spacing between image boxes */
+}
+
+/* Remove list styling for images */
+.image-container img {
+    list-style: none;
+}
+
+.line-over {
+  border-top: 0.5px solid #000; /* Adjust color and thickness as needed */
+  margin-top: -1px; /* Adjust to align with text */
+}
+
+.line-under {
+  border-bottom: 0.5px solid #000; /* Adjust color and thickness as needed */
+  margin-bottom: -1px; /* Adjust to align with text */
+}
+
+
+
+/* Style for the black button */
+.image-item {
+  position: relative;
+}
+
+.view-details-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the button on hover */
+.image-item:hover .view-details-button {
+  opacity: 1;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 200px; /* Add margin to create space */
+}
+
+.background-box {
+  background-color: #fbf8ed; /* Beige color, adjust as needed */
+  padding: 20px; /* Add padding to create space within the box */
+  margin-bottom: 20px; /* Add margin to separate from other sections */
+}
+
+/* Additional styles for the big image section */
+.big-image-section {
+  margin-top: -1000px; /* Adjust margin-top as needed */
+}
+
+
+.shop-all-bestsellers {
+  text-align: right; /* Align text to the right */
+  margin-top: -3px;
+  margin-right: 20px; /* Adjust the margin-right as needed */
+}
+
+/* Style for the text under image boxes */
+.image-item {
+  text-align: center; /* Align container to the center */
+  margin-top: 20px; /* Adjust the margin-top as needed */
+  position: relative; /* Position relative for absolute positioning of text */
+}
+
+.image-box {
+  position: relative; /* Position relative for absolute positioning of text */
+}
+
+.image-box img {
+  width: 200px; /* Set the width as needed */
+  height: 250px; /* Set the height as needed */
+  display: block; /* Ensure the image is block-level for margin and alignment */
+  margin: auto; /* Center the image horizontally */
+}
+
+.image-text {
+  position: relative; /* Position text relatively */
+  margin-top: 5px; /* Adjust the margin-top as needed */
+  font-family: 'Maven Pro', sans-serif; /* Set the font family */
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+/* Style for the lines */
+.line {
+  width: 50%; /* Adjust the width of the line */
+  border-top: 1px solid #848F91; /* Adjust the color and style of the line */
+  margin: 0 auto; /* Center the line horizontally */
+  margin-top: 5px; /* Adjust the margin-top as needed */
+}
+
+.line-text {
+  position: absolute; /* Position text absolutely */
+  top: -8px; /* Adjust the top position as needed */
+  background-color: #fff; /* Set the background color to match the background */
+  padding: 0 10px; /* Add padding to the text */
+  font-family: 'Maven Pro', sans-serif; /* Set the font family */
+  font-size: 14px; /* Adjust the font size as needed */
+  color: #848F91; /* Set the text color */
+}
+
+.image-text {
+  line-height: 1.5; /* Adjust the line-height as needed */
+}
+
+
+.underline-text {
+  font-family: 'Maven Pro', sans-serif;
+  font-size: 13px;
+  font-weight: Regular;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block; /* Ensure the underline doesn't span the full width */
+}
+
+
+/* Additional styles from your existing CSS */
+.searchIconDiv {
+  display: inline-block;
+  width: 30px;
+  height: 70px;
+  margin-top: 41px;
+  margin-left: 25px;
+  margin-right: 25px;
+
+  &:active {
+    .search-path {
+      stroke: #111516;
+      stroke-width: 2px;
+    }
+  }
+
+  .search-icon {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .account-text {
+    margin-left: 5px;
+  }
+
+  .add-favourites-icon {
+    margin-top: 50px;
+    width: 60px;
+    height: 80px;
+  }
+
+  .add-cart {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left: 40px;
+  }
+
+  .navbar-logo {
+    max-width: 50px; /* Adjust the max-width as needed */
+    max-height: 50px; /* Adjust the max-height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+
+
+
+
+}

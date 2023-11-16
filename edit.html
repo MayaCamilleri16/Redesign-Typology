@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourites</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-DOXMLfHhQkvFFp+rWTZwVlPVqdIhpDVYT9csOnHSgWQWPX0v5MCGtjCJbY6ERspU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-qmcRX9P6Cl/e3L97QJ0FU3r+uhXo9DNO9OY3pRjL/R2fKQb6eg+SmCPn75aB8N3znn6J2d0o9VEA8+8vYuy6xg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+        <style>
+            .header-left {
+            text-align: left;
+            max-width: 400px; /* Adjust the max-width as needed */
+            margin: auto;
+        }
+
+        .center-header {
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin as needed */
+            font-family: 'Maven Pro', sans-serif;
+            font-weight: 700;
+        }
+
+        .header-left-left {
+    text-align: left;
+    max-width: 400px; /* Adjust the max-width as needed */
+    margin: auto;
+    margin-left: 10px; /* Adjust the margin-left to move it to the left */
+}
+        .dropdown-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding-right: -100px;
+
+        }
+
+        .dropdown-arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 5px;
+            vertical-align: middle;
+            border-top: 5px solid;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            left: 10px;
+        }
+
+        .dropdown-box {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            left: 10px;
+        }
+
+        .dropdown-box a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-box a:hover {
+            background-color: #f1f1f1;
+        }
+        .image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.image-container img {
+    width: 100px; /* Adjust the width of images as needed */
+    height: 100px; /* Adjust the height of images as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.image-container img {
+    width: 250px; /* Adjust the width of images as needed */
+    height: 300px; /* Adjust the height of images as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+.image-container {
+            display: flex;
+            margin-top: 80px; /* Adjust margin as needed */
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .image-item {
+            text-align: left;
+            margin-right: 10px; /* Adjust margin between images */
+        }
+
+        .image-item img {
+            width: 250px; /* Adjust the width of images as needed */
+            height: 300px; /* Adjust the height of images as needed */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .image-item p {
+            margin-top: 10px; /* Adjust margin as needed */
+            font-family: 'Roboto Mono', monospace; /* Specify Roboto Mono font */
+            font-size: 12px; /* Adjust font size as needed */
+        }
+        
+
+        </style>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            
+            <!-- Left side -->
+            <div class="navbar-nav navbar-nav-left">
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Face Care</a></li>
+                            <li><a class="dropdown-item" href="#">Stage of Skin Aging</a></li>
+                            <li><a class="dropdown-item" href="#">Body and Hair Care</a></li>
+                            <li><a class="dropdown-item" href="#">By Concern</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="edit.html">By Edit</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                      </li>
+                </ul>
+            </div>
+            
+            <a class="navbar-brand navbar-brand-center menu-center" href="index.html">Typology.</a>
+            
+            
+                <!-- Right side -->
+<div class="navbar-nav navbar-nav-right">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <div class="searchIconDiv">
+                <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">A magnifying glass icon.</desc><g class="search-path" fill="none" stroke="#848F91"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
+            </div>
+        </li>
+        <li>
+            <a href="favourites.html" class="add-favourites">
+                <span class="add-favourites__icon">♥</span>
+            </a>
+        </li>
+        
+        <li>
+            <a href="cart.html" class="add-cart">
+                <svg height="23px" viewBox="0 -31 512.00026 512" width="25px" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m164.960938 300.003906h.023437c.019531 0 .039063-.003906.058594-.003906h271.957031c6.695312 0 12.582031-4.441406 14.421875-10.878906l60-210c1.292969-4.527344.386719-9.394532-2.445313-13.152344-2.835937-3.757812-7.269531-5.96875-11.976562-5.96875h-366.632812l-10.722657-48.253906c-1.527343-6.863282-7.613281-11.746094-14.644531-11.746094h-90c-8.285156 0-15 6.714844-15 15s6.714844 15 15 15h77.96875c1.898438 8.550781 51.3125 230.917969 54.15625 243.710938-15.941406 6.929687-27.125 22.824218-27.125 41.289062 0 24.8125 20.1875 45 45 45h272c8.285156 0 15-6.714844 15-15s-6.714844-15-15-15h-272c-8.269531 0-15-6.730469-15-15 0-8.257812 6.707031-14.976562 14.960938-14.996094zm312.152343-210.003906-51.429687 180h-248.652344l-40-180zm0 0"/>
+                    <path d="m150 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/>
+                    <path d="m362 405c0 24.8125 20.1875 45 45 45s45-20.1875 45-45-20.1875-45-45-45-45 20.1875-45 45zm45-15c8.269531 0 15 6.730469 15 15s-6.730469 15-15 15-15-6.730469-15-15 6.730469-15 15-15zm0 0"/>
+                </svg>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="account.html">Account</a>
+        </li>
+    </ul>
+</div>
+    </nav>
+
+    <div class="center-header">
+        <h2>BY EDIT</h2>
+    </div>
+
+    <div class="header-left header-left-left">
+        <button class="dropdown-btn" onclick="toggleDropdown()">New Arrivals<span class="dropdown-arrow"></span></button>
+        <div id="dropdownBox" class="dropdown-box">
+            <a href="#">Last Chance</a>
+            <a href="#">Accessories</a>
+        </div>
+    </div>
+    
+    <div class="image-container">
+        <div class="image-item">
+            <img src="https://i.pinimg.com/564x/f9/84/67/f984679de1b62382bcda5383aab23071.jpg" alt="Image 1">
+            <p>Vitamin C - £15</p>
+        </div>
+        <div class="image-item">
+            <img src="https://i.pinimg.com/564x/99/fe/eb/99feeb5c37b611490995ec59041b4125.jpg" alt="Image 2">
+            <p>Sensitive skin Serum -£20</p>
+        </div>
+        <div class="image-item">
+            <img src="https://i.pinimg.com/736x/ed/68/4d/ed684dfe8d52b15be158280eb6d880d6.jpg" alt="Image 3">
+            <p>Lip oil - £12</p>
+        </div>
+        <div class="image-item">
+            <img src="https://i.pinimg.com/564x/91/6e/b7/916eb71796439cbcd86956d1851394d6.jpg" alt="Image 4">
+            <p>Serum Cafeine £12</p>
+        </div>
+    </div>
+    
+    
+<br></br>
+<br></br>
+<br></br>
+
+    <div class="container mt-5">
+        <!-- New header section -->
+        <div class="row mb-3">
+            <!-- Header aligned to the left -->
+            <div class="col-md-8">
+                <h3 style="font-weight: 500; font-family: 'Maven Pro', sans-serif; color: rgb(1, 0, 0);">
+                    We seek the essential.<br> Our formulations are pared back to functional, <br> safe ingredients.<br> Made in France, shipped worldwide.
+                </h3>
+            </div>
+            <!-- Two images on the right side with margin -->
+            <div class="col-md-3 text-end">
+                <img src="https://global.typology.com/en-b-corp-logo.svg" alt="Image 1" class="img-fluid mb-100">
+                <img src="https://global.typology.com/peta-logo.svg" alt="Image 2" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- Add margin between video and dropdown button and email input box -->
+        <div class="row mb-3">
+            <!-- Dropdown button and email input box with beige background -->
+            <div class="col-md-12" style="background-color: #fbf8ed; padding: 20px;">
+                <!-- Dropdown button -->
+                <div class="col-md-12 text-end mb-3">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: white; color: rgb(1, 0, 0);">
+                            Global
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <!-- Add your dropdown items here -->
+                            <li><a class="dropdown-item" href="#">USA</a></li>
+                            <li><a class="dropdown-item" href="#">UK</a></li>
+                            <li><a class="dropdown-item" href="#">EUROPE</a></li>
+                            <!-- Add more items as needed -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Additional header -->
+                <div class="col-md-3 text-end mb-3">
+                    <h4 style="font-weight: 500; font-family: 'Maven Pro', sans-serif; color: rgb(1, 0, 0);">
+                        Subscribe to our newsletter
+                    </h4>
+                </div>
+
+                <!-- Email input box -->
+                <div class="row">
+                    <div class="col-md-3 text-end">
+                        <input type="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdownBtn = document.querySelector('.dropdown-btn');
+            const dropdownBox = document.getElementById('dropdownBox');
+    
+            dropdownBtn.addEventListener('click', function () {
+                dropdownBox.style.display = dropdownBox.style.display === 'none' ? 'block' : 'none';
+            });
+    
+            window.addEventListener('click', function (event) {
+                if (!event.target.matches('.dropdown-btn')) {
+                    dropdownBox.style.display = 'none';
+                }
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
