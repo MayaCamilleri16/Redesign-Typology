@@ -1,4 +1,12 @@
-/* Add this CSS to your existing styles or create a new style block */
+
+
+/* Media query for devices with a maximum width of 600px */
+@media only screen and (max-width: 600px) {
+  #dropdownBox {
+      width: 100%;
+  }
+}
+
 .navbar {
   padding: 5px 10px; /* Adjust the padding as needed */
   margin-bottom: 40px;
@@ -39,7 +47,6 @@
 }
 
 
-/* Add this CSS to your existing styles or create a new style block */
 .navbar-brand.navbar-brand-center.menu-center {
   font-size: 28px; /* Adjust the font size as needed */
   font-weight: bold; /* Make the text bold */
@@ -47,7 +54,7 @@
   margin-right: 300px; /* Adjust the right margin as needed */
 }
 
-/* Style for the additional images */
+
 .additional-images {
   position: absolute;
   top: 0;
@@ -72,7 +79,7 @@
   opacity: 1; /* Show the images on hover */
 }
 
-/* Adjusted styles for the second image */
+
 .additional-images img:nth-child(2) {
   max-width: 24%;
 }
@@ -82,7 +89,7 @@
   filter: blur(0);
 }
 
-/* Style for the "View Item" button */
+
 .view-item-button {
   background-color: black;
   color: white;
@@ -155,7 +162,7 @@
   }
 }
 
-/* Style for the additional images */
+
 .additional-images {
   position: absolute;
   top: 0;
@@ -246,7 +253,7 @@
   padding-left: 8%; /* Add some left padding for better alignment */
 }
 
-/* Optional: Add max-width for better responsiveness */
+
 .carousel-inner img {
   max-width: 45%; /* Adjust the max-width as needed */
 }
@@ -260,20 +267,20 @@
   float: right; /* Float the header to the right */
 }
 
-  /* Style for the image container */
+  
   .image-container {
     display: flex;
     justify-content: center;
     margin-top: 100px;
 }
 
-/* Style for each image box */
+
 .image-box {
     border: 1px solid #000; /* Border color */
     margin: 20px; /* Adjust spacing between image boxes */
 }
 
-/* Remove list styling for images */
+
 .image-container img {
     list-style: none;
 }
@@ -290,7 +297,7 @@
 
 
 
-/* Style for the black button */
+
 .image-item {
   position: relative;
 }
@@ -328,7 +335,7 @@
   margin-bottom: 20px; /* Add margin to separate from other sections */
 }
 
-/* Additional styles for the big image section */
+
 .big-image-section {
   margin-top: -1000px; /* Adjust margin-top as needed */
 }
@@ -340,7 +347,7 @@
   margin-right: 20px; /* Adjust the margin-right as needed */
 }
 
-/* Style for the text under image boxes */
+
 .image-item {
   text-align: center; /* Align container to the center */
   margin-top: 20px; /* Adjust the margin-top as needed */
@@ -365,7 +372,7 @@
   font-size: 14px; /* Adjust the font size as needed */
 }
 
-/* Style for the lines */
+
 .line {
   width: 50%; /* Adjust the width of the line */
   border-top: 1px solid #848F91; /* Adjust the color and style of the line */
@@ -398,14 +405,18 @@
 }
 
 
+
+
+
+
 /* Additional styles from your existing CSS */
 .searchIconDiv {
   display: inline-block;
   width: 30px;
   height: 70px;
   margin-top: 41px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 20px;
+  margin-right: 50px;
 
   &:active {
     .search-path {
@@ -413,6 +424,7 @@
       stroke-width: 2px;
     }
   }
+}
 
   .search-icon {
     font-size: 20px;
@@ -444,7 +456,176 @@
 }
 
 
+   edit page
 
+            .header-left {
+            text-align: left;
+            max-width: 400px; /* Adjust the max-width as needed */
+            margin: auto;
+        }
 
+        .center-header {
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin as needed */
+            font-family: 'Maven Pro', sans-serif;
+            font-weight: 700;
+        }
 
+        .header-left-left {
+    text-align: left;
+    max-width: 400px; /* Adjust the max-width as needed */
+    margin: auto;
+    margin-left: 10px; /* Adjust the margin-left to move it to the left */
 }
+        .dropdown-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding-right: -100px;
+
+        }
+
+        .dropdown-arrow {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 5px;
+            vertical-align: middle;
+            border-top: 5px solid;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            left: 10px;
+        }
+
+        .dropdown-box {
+            display: none;
+            position: absolute;
+            background-color: transparent;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            left: 10px;
+        }
+
+        .dropdown-box a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-box a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.image-container img {
+    width: 100px; /* Adjust the width of images as needed */
+    height: 100px; /* Adjust the height of images as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+.image-container img {
+    width: 250px; /* Adjust the width of images as needed */
+    height: 300px; /* Adjust the height of images as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+.image-container {
+            display: flex;
+            margin-top: 80px; /* Adjust margin as needed */
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .image-item {
+            text-align: left;
+            margin-right: 10px; /* Adjust margin between images */
+        }
+
+        .image-item img {
+            width: 250px; /* Adjust the width of images as needed */
+            height: 300px; /* Adjust the height of images as needed */
+            object-fit: cover; /* Maintain aspect ratio */
+        }
+
+        .image-item p {
+            margin-top: 10px; /* Adjust margin as needed */
+            font-family: 'Roboto Mono', monospace; /* Specify Roboto Mono font */
+            font-size: 12px; /* Adjust font size as needed */
+        }
+        
+
+
+       /*About page
+
+/* Container styles */
+.container {
+  max-width: 1140px;
+  margin: auto;
+  
+}
+
+/* Header section styles */
+.row.mb-3 {
+  margin-bottom: 100px;
+  
+}
+
+.col-md-8 h3 {
+  font-weight: 600;
+  font-family: 'Maven Pro', sans-serif;
+  color: #010000;
+ 
+}
+
+.col-md-3 img {
+  margin-bottom: 30px;
+  
+}
+
+/* Carousel styles */
+.carousel-inner {
+  position: relative;
+}
+
+.carousel-item {
+  text-align: left;
+}
+
+.carousel-item img {
+  border-radius: 5px;
+  margin-left: 100px;
+}
+
+/* Email input box styles */
+input[type="email"] {
+  width: 100%;
+  padding: 5px;
+}
+
+/* Footer styles (assuming it's the section with newsletter and dropdown) */
+#footer {
+  background-color: #fbf8ed;
+  padding: 50px;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+

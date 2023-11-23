@@ -10,116 +10,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap">
     <link rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
-        <style>
-            .header-left {
-            text-align: left;
-            max-width: 400px; /* Adjust the max-width as needed */
-            margin: auto;
-        }
-
-        .center-header {
-            text-align: center;
-            margin-top: 20px; /* Adjust the margin as needed */
-            font-family: 'Maven Pro', sans-serif;
-            font-weight: 700;
-        }
-
-        .header-left-left {
-    text-align: left;
-    max-width: 400px; /* Adjust the max-width as needed */
-    margin: auto;
-    margin-left: 10px; /* Adjust the margin-left to move it to the left */
-}
-        .dropdown-btn {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            padding-right: -100px;
-
-        }
-
-        .dropdown-arrow {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            margin-left: 5px;
-            vertical-align: middle;
-            border-top: 5px solid;
-            border-right: 5px solid transparent;
-            border-left: 5px solid transparent;
-            left: 10px;
-        }
-
-        .dropdown-box {
-            display: none;
-            position: absolute;
-            background-color: transparent;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            left: 10px;
-        }
-
-        .dropdown-box a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-box a:hover {
-            background-color: #f1f1f1;
-        }
-        .image-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px; /* Adjust margin as needed */
-}
-
-.image-container img {
-    width: 100px; /* Adjust the width of images as needed */
-    height: 100px; /* Adjust the height of images as needed */
-    object-fit: cover; /* Maintain aspect ratio */
-}
-.image-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px; /* Adjust margin as needed */
-}
-
-.image-container img {
-    width: 250px; /* Adjust the width of images as needed */
-    height: 300px; /* Adjust the height of images as needed */
-    object-fit: cover; /* Maintain aspect ratio */
-}
-.image-container {
-            display: flex;
-            margin-top: 80px; /* Adjust margin as needed */
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-
-        .image-item {
-            text-align: left;
-            margin-right: 10px; /* Adjust margin between images */
-        }
-
-        .image-item img {
-            width: 250px; /* Adjust the width of images as needed */
-            height: 300px; /* Adjust the height of images as needed */
-            object-fit: cover; /* Maintain aspect ratio */
-        }
-
-        .image-item p {
-            margin-top: 10px; /* Adjust margin as needed */
-            font-family: 'Roboto Mono', monospace; /* Specify Roboto Mono font */
-            font-size: 12px; /* Adjust font size as needed */
-        }
         
-
-        </style>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             
@@ -274,23 +166,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownBtn = document.querySelector('.dropdown-btn');
-            const dropdownBox = document.getElementById('dropdownBox');
-    
-            dropdownBtn.addEventListener('click', function () {
-                dropdownBox.style.display = dropdownBox.style.display === 'none' ? 'block' : 'none';
-            });
-    
-            window.addEventListener('click', function (event) {
-                if (!event.target.matches('.dropdown-btn')) {
-                    dropdownBox.style.display = 'none';
-                }
-            });
-        });
-    </script>
-    
+    <script src="java.js"></script>
 </body>
 
 </html>
