@@ -1,6 +1,6 @@
 
 
-/* Media query for devices with a maximum width of 600px */
+
 @media only screen and (max-width: 600px) {
   #dropdownBox {
       width: 100%;
@@ -8,12 +8,12 @@
 }
 
 .navbar {
-  padding: 5px 10px; /* Adjust the padding as needed */
+  padding: 5px 10px; 
   margin-bottom: 40px;
 }
 
 .navbar-nav-left {
-  margin-right: 10px; /* Add margin between left side elements */
+  margin-right: 10px; 
 }
 
 .navbar-brand-center {
@@ -24,13 +24,13 @@
 .navbar-nav-right {
   display: flex;
   align-items: center;
-  margin-top: 5px; /* Adjust the margin as needed */
+  margin-top: 5px; 
 }
 
 .navbar-nav-right .navbar-nav {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adjust the gap as needed */
+  gap: 10px; 
 }
 
 .navbar-nav-right .navbar-nav li {
@@ -39,19 +39,19 @@
 }
 
 .navbar-nav-left .nav-link.dropdown-toggle::after {
-  display: none; /* Remove the arrow */
+  display: none; 
 }
 
 .navbar-nav-left .nav-item.dropdown:hover .dropdown-menu {
-  display: block; /* Show the dropdown on hover */
+  display: block; 
 }
 
 
 .navbar-brand.navbar-brand-center.menu-center {
-  font-size: 28px; /* Adjust the font size as needed */
-  font-weight: bold; /* Make the text bold */
-  font-family: 'Calibiri', sans-serif; /* Set the font family to Maven Pro */
-  margin-right: 300px; /* Adjust the right margin as needed */
+  font-size: 28px; 
+  font-weight: bold; 
+  font-family: 'Calibiri', sans-serif; 
+  margin-right: 230px; 
 }
 
 
@@ -71,12 +71,12 @@
   max-width: 30%;
   height: auto;
   margin-bottom: 10px;
-  filter: blur(5px); /* Initial blur effect */
-  transition: filter 0.3s ease-in-out; /* Transition for blur effect */
+  filter: blur(5px);
+  transition: filter 0.3s ease-in-out; 
 }
 
 .additional-images:hover {
-  opacity: 1; /* Show the images on hover */
+  opacity: 1; 
 }
 
 
@@ -84,7 +84,6 @@
   max-width: 24%;
 }
 
-/* Remove blur effect on hover */
 .additional-images:hover img {
   filter: blur(0);
 }
@@ -99,11 +98,10 @@
   cursor: pointer;
 }
 
-/* Position the "View Item" button */
-.view-item-button:hover {
-  background-color: #333; /* Darker background on hover */
-}
 
+.view-item-button:hover {
+  background-color: #333;
+}
 
 
 
@@ -119,36 +117,38 @@
   text-decoration: underline;
   cursor: pointer;
   padding-left: -100px;
-  margin-left: -437px;  /* Remove padding */
-  border: none; /* Remove border */
-  background: none; /* Remove background */
-  outline: none; /* Remove outline */
+  margin-left: -437px; 
+  border: none; 
+  background: none; 
+  outline: none; 
 }
 
 .col-md-6 {
   position: relative;
-  z-index: 1; /* Ensure the carousel appears above the footer */
+  z-index: 1; 
 }
 
 .col-md-6 {
   position: relative;
-  z-index: 1; /* Ensure the carousel appears above the footer */
+  z-index: 1; 
 }
 
 .footer {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 20px; 
   text-align: center;
-  font-family: 'Maven Pro', sans-serif; /* Use Maven Pro font */
+  font-family: 'Maven Pro', sans-serif;
   overflow: hidden;
-  margin-top: 20px; /* Add margin to ensure it doesn't overlap with the carousel */
+  margin-top: 20px; 
 }
+
+
 
 .marquee-text {
   display: inline-block;
   white-space: nowrap;
-  word-spacing: 10px; /* Adjust space between words */
-  animation: marquee 20s linear infinite; /* Increased duration for a smoother effect */
+  word-spacing: 10px; 
+  animation: marquee 20s linear infinite; 
 }
 
 @keyframes marquee {
@@ -161,73 +161,33 @@
 }
 
 
-.additional-images {
-  position: absolute;
-  top: 0;
-  right: -330px;
-  margin-top: -1px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+.image-box img {
+  border: 0 !important; 
 }
 
-.additional-images img {
-  max-width: 30%;
-  height: auto;
-  margin-bottom: 10px;
-  filter: blur(5px); /* Initial blur effect */
-  transition: filter 0.3s ease-in-out; /* Transition for blur effect */
-}
 
-.additional-images:hover {
-  opacity: 1; /* Show the images on hover */
-}
 
-/* Adjusted styles for the second image */
-.additional-images img:nth-child(2) {
-  max-width: 24%;
-}
-
-/* Remove blur effect on hover */
-.additional-images:hover img {
-  filter: blur(0);
-}
-
-/* Style for the "View Product" button */
-.view-product-button {
-  background-color: black;
-  color: white;
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Position the "View Product" button */
-.view-product-button:hover {
-  background-color: #333; /* Darker background on hover */
-}
 
 
 
 .add-favourites,
 .add-cart,
 .searchIconDiv {
-  margin-right: 30px; /* Add margin between icons */
+  margin-right: 30px; 
 }
 
 .add-favourites__icon {
-  font-size: 25px; /* Adjust icon size as needed */
+  font-size: 25px; 
+  color: black; 
+  text-decoration: none; 
 }
 
 .add-cart svg {
-  vertical-align: middle; /* Align the cart icon vertically */
+  vertical-align: middle; 
 }
 
 .nav-item {
-  margin-right: 10px; /* Add margin between nav items */
+  margin-right: 10px; 
 }
 
 .title-left {
@@ -242,27 +202,30 @@
 }
 
 .body-text p {
-  font-family: 'Roboto Mono', monospace; /* Set the font family for header and body */
-  text-align: left; /* Align text to the left */
+  font-family: 'Roboto Mono', monospace; 
+  text-align: left; 
 }
 
 .body-text {
-  margin-top: 20px; /* Adjust the margin as needed */
-  padding-left: 8%; /* Add some left padding for better alignment */
+  margin-top: 20px; 
+  padding-left: 8%; 
 }
 
+.carousel-inner {
+  border-radius: 0; 
+}
 
 .carousel-inner img {
-  max-width: 45%; /* Adjust the max-width as needed */
+  max-width: 45%; 
 }
 
 .bestsellers-header {
   font-family: 'Maven Pro', sans-serif;
   font-weight: bold;
   font-size: 35px;
-  margin-top: 60px; /* Adjusted margin-top to place it below the footer */
+  margin-top: 60px; 
   margin-right: 1210px;
-  float: right; /* Float the header to the right */
+  float: right; 
 }
 
   
@@ -274,8 +237,8 @@
 
 
 .image-box {
-    border: 1px solid #000; /* Border color */
-    margin: 20px; /* Adjust spacing between image boxes */
+   
+    margin: 20px; 
 }
 
 
@@ -284,13 +247,13 @@
 }
 
 .line-over {
-  border-top: 0.5px solid #000; /* Adjust color and thickness as needed */
-  margin-top: -1px; /* Adjust to align with text */
+  border-top: 0.5px solid #000; 
+  margin-top: -1px; 
 }
 
 .line-under {
-  border-bottom: 0.5px solid #000; /* Adjust color and thickness as needed */
-  margin-bottom: -1px; /* Adjust to align with text */
+  border-bottom: 0.5px solid #000; 
+  margin-bottom: -1px; 
 }
 
 
@@ -303,11 +266,11 @@
 .view-details-button {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 53%;
   transform: translate(-50%, -50%);
   background-color: black;
   color: white;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -315,7 +278,7 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-/* Show the button on hover */
+
 .image-item:hover .view-details-button {
   opacity: 1;
 }
@@ -324,72 +287,72 @@
   display: flex;
   justify-content: center;
   margin-top: 100px;
-  margin-bottom: 200px; /* Add margin to create space */
+  margin-bottom: 200px; 
 }
 
 .background-box {
-  background-color: #fbf8ed; /* Beige color, adjust as needed */
-  padding: 20px; /* Add padding to create space within the box */
-  margin-bottom: 20px; /* Add margin to separate from other sections */
+  background-color: #f6f0dc; 
+  padding: 20px; 
+  margin-bottom: 20px; 
 }
 
 
 .big-image-section {
-  margin-top: -1000px; /* Adjust margin-top as needed */
+  margin-top: -1000px; 
 }
 
 
 .shop-all-bestsellers {
-  text-align: right; /* Align text to the right */
-  margin-top: -3px;
-  margin-right: 20px; /* Adjust the margin-right as needed */
+  text-align: right; 
+  margin-top: -0px;
+  margin-right: 20px; 
 }
 
 
 .image-item {
-  text-align: center; /* Align container to the center */
-  margin-top: 20px; /* Adjust the margin-top as needed */
-  position: relative; /* Position relative for absolute positioning of text */
+  text-align: center; 
+  margin-top: 20px; 
+  position: relative; 
 }
 
 .image-box {
-  position: relative; /* Position relative for absolute positioning of text */
+  position: relative; 
 }
 
 .image-box img {
-  width: 200px; /* Set the width as needed */
-  height: 250px; /* Set the height as needed */
-  display: block; /* Ensure the image is block-level for margin and alignment */
-  margin: auto; /* Center the image horizontally */
+  width: 200px; 
+  height: 250px; 
+  display: block; 
+  margin: auto; 
 }
 
 .image-text {
-  position: relative; /* Position text relatively */
-  margin-top: 5px; /* Adjust the margin-top as needed */
-  font-family: 'Maven Pro', sans-serif; /* Set the font family */
-  font-size: 14px; /* Adjust the font size as needed */
+  position: relative;
+  margin-top: 5px; 
+  font-family: 'Maven Pro', sans-serif; 
+  font-size: 14px; 
 }
 
 
 .line {
-  width: 50%; /* Adjust the width of the line */
-  border-top: 1px solid #848F91; /* Adjust the color and style of the line */
-  margin: 0 auto; /* Center the line horizontally */
-  margin-top: 5px; /* Adjust the margin-top as needed */
+  width: 50%; 
+  border-top: 1px solid #848F91; 
+  margin: 0 auto;
+  margin-top: 5px; 
 }
 
 .line-text {
-  position: absolute; /* Position text absolutely */
-  top: -8px; /* Adjust the top position as needed */
-  background-color: #fff; /* Set the background color to match the background */
-  padding: 0 10px; /* Add padding to the text */
-  font-family: 'Maven Pro', sans-serif; /* Set the font family */
-  font-size: 14px; /* Adjust the font size as needed */
-  color: #848F91; /* Set the text color */
+  position: absolute; 
+  top: -8px; 
+  background-color: #fff; 
+  padding: 0 10px; 
+  font-family: 'Maven Pro', sans-serif; 
+  font-size: 14px; 
+  color: #848F91; 
 }
 
 .image-text {
-  line-height: 1.5; /* Adjust the line-height as needed */
+  line-height: 1.5; 
 }
 
 
@@ -399,15 +362,11 @@
   font-weight: Regular;
   text-decoration: underline;
   cursor: pointer;
-  display: inline-block; /* Ensure the underline doesn't span the full width */
+  display: inline-block; 
 }
 
 
 
-
-
-
-/* Additional styles from your existing CSS */
 .searchIconDiv {
   display: inline-block;
   width: 30px;
@@ -448,9 +407,9 @@
   }
 
   .navbar-logo {
-    max-width: 50px; /* Adjust the max-width as needed */
-    max-height: 50px; /* Adjust the max-height as needed */
-    margin-right: 10px; /* Adjust the margin as needed */
+    max-width: 50px; 
+    max-height: 50px; 
+    margin-right: 10px; 
 }
 
 
@@ -458,125 +417,134 @@
 
             .header-left {
             text-align: left;
-            max-width: 400px; /* Adjust the max-width as needed */
+            max-width: 400px; 
             margin: auto;
         }
 
         .center-header {
             text-align: center;
-            margin-top: 20px; /* Adjust the margin as needed */
+            margin-top: 20px; 
             font-family: 'Maven Pro', sans-serif;
             font-weight: 700;
         }
 
         .header-left-left {
     text-align: left;
-    max-width: 400px; /* Adjust the max-width as needed */
+    max-width: 400px;
     margin: auto;
-    margin-left: 10px; /* Adjust the margin-left to move it to the left */
+    margin-left: 10px; 
 }
-        .dropdown-btn {
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-            padding-right: -100px;
-
-        }
-
-        .dropdown-arrow {
-            display: inline-block;
-            width: 0;
-            height: 0;
-            margin-left: 5px;
-            vertical-align: middle;
-            border-top: 5px solid;
-            border-right: 5px solid transparent;
-            border-left: 5px solid transparent;
-            left: 10px;
-        }
-
-        .dropdown-box {
-            display: none;
-            position: absolute;
-            background-color: transparent;
-            min-width: 160px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            left: 10px;
-        }
-
-        .dropdown-box a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-box a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .image-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px; /* Adjust margin as needed */
+.dropdown-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative; 
+  left: 0; 
 }
 
-.image-container img {
-    width: 100px; /* Adjust the width of images as needed */
-    height: 100px; /* Adjust the height of images as needed */
-    object-fit: cover; /* Maintain aspect ratio */
+.dropdown-arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-top: 5px solid;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+.dropdown-box {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  left: 20; 
+}
+
+.dropdown-box a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-box a:hover {
+  background-color: #f1f1f1;
+}
+
+
+.header-left-left {
+  position: relative;
+  left: 50px; 
 }
 
 .image-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px; /* Adjust margin as needed */
+  display: flex;
+  margin-top: 80px; 
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
-.image-container img {
-    width: 250px; /* Adjust the width of images as needed */
-    height: 300px; /* Adjust the height of images as needed */
-    object-fit: cover; /* Maintain aspect ratio */
+.image-item {
+  position: relative;
+  text-align: left;
+  margin-right: 60px; 
+  margin-left: 40px;
+  overflow: hidden; 
 }
-.image-container {
-            display: flex;
-            margin-top: 80px; /* Adjust margin as needed */
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-
-        .image-item {
-            text-align: left;
-            margin-right: 10px; /* Adjust margin between images */
-        }
-
-        .image-item img {
-            width: 250px; /* Adjust the width of images as needed */
-            height: 300px; /* Adjust the height of images as needed */
-            object-fit: cover; /* Maintain aspect ratio */
-        }
-
-        .image-item p {
-            margin-top: 10px; /* Adjust margin as needed */
-            font-family: 'Roboto Mono', monospace; /* Specify Roboto Mono font */
-            font-size: 12px; /* Adjust font size as needed */
-        }
-        
 
 
-       /*About page
+.image-item img {
+  width: 250px;
+  height: 300px; 
+  object-fit: cover; 
+}
 
-/* Container styles */
+.image-item p {
+  margin-top: 10px; 
+  font-family: 'maven pro', monospace; 
+  font-size: 12px; 
+}
+
+
+
+
+
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 70%;
+
+  justify-content: center;
+  align-items: center;
+  opacity: 0; 
+}
+
+.image-item:hover .hover-image {
+  opacity: 1; 
+}
+
+.hover-image img {
+  width: 250px; 
+  height: 300px; 
+  object-fit: cover; 
+}
+
+About page
+
+
 .container {
   max-width: 1140px;
   margin: auto;
   
 }
 
-/* Header section styles */
+
 .row.mb-3 {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   
 }
 
@@ -592,7 +560,7 @@
   
 }
 
-/* Carousel styles */
+
 .carousel-inner {
   position: relative;
 }
@@ -606,19 +574,73 @@
   margin-left: 100px;
 }
 
-/* Email input box styles */
+
 input[type="email"] {
   width: 100%;
   padding: 5px;
 }
 
-/* Footer styles (assuming it's the section with newsletter and dropdown) */
+
 #footer {
   background-color: #fbf8ed;
   padding: 50px;
   margin-bottom: 50px;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background: url('land.jpg') center top no-repeat;
+  background-size: 100% 140%;
+  height: 50vh;
+  position: relative;
+}
+
+.header-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 41%;
+  padding: 300px;
+  box-sizing: border-box;
+  text-align: right;
+  color: #583e38;
+  font-size: 5vw;
+}
+
+.image-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 5px;
+  text-decoration: underline;
+}
+
+.account-section {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(1, 0, 0);
+}
+
+
+.favorite-button {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  font-size: 35px;
+  color: black;
+  background: none;
+  border: none; 
+  cursor: pointer;
+}
 
 
 
