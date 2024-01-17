@@ -1,82 +1,74 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+$error_message = '';
 
-ob_start(); 
+
+$db_password = "xqeXXyp*-RePcD(R";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
     $host = "localhost";
     $db_username = "Maya";
-    $db_password = "xqeXXyp*-RePcD(R";
-    $database = "Maya";
+    $password = "xqeXXyp*-RePcD(R"; 
+    $database = "Maya"; 
+
 
     $conn = new mysqli($host, $db_username, $db_password, $database);
+
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-  
-    $check_sql = "SELECT username FROM user1 WHERE username = ?";
-    $check_stmt = $conn->prepare($check_sql);
-    $check_stmt->bind_param("s", $username);
-    $check_stmt->execute();
-    $check_result = $check_stmt->get_result();
+    $username = $_POST['username'];
+    $form_password = $_POST['password']; 
 
-    if ($check_result->num_rows > 0) {
-        echo "Username already exists. Please choose a different username.";
-    } else {
-        if ($stmt = $conn->prepare("INSERT INTO user1 (username, password) VALUES (?, ?)")) {
-            $stmt->bind_param("ss", $username, $hashed_password);
+    $stmt = $conn->prepare("SELECT user_id, password FROM users WHERE username = ?");
 
-            if ($stmt->execute()) {
-                // Redirect to login page
-                header("Location: index.php");
-                exit();
-            } else {
-                echo "Error: " . $stmt->error;
-            }
-
-            $stmt->close();
-        } else {
-            echo "Error: " . $conn->error;
-        }
+    if ($stmt === false) {
+        die("Prepare failed: " . $conn->error);
     }
+    
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-    $check_stmt->close();
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if (password_verify($form_password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            header("Location: index.php");
+            exit();
+        } else {
+            $error_message = "Invalid password.";
+        }
+    } else {
+        $error_message = "Username does not exist.";
+    }
+    $stmt->close();
     $conn->close();
 }
 
-ob_end_flush();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sign up</title>
+    <title>Login</title>
     <style>
         body {
             font-family: 'maven pro';
             background-color: #f7f7f7;
             margin: 0;
             padding: 0;
-        }
-
-        .container {
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        .register-container {
+        .login-container {
             background: #fff;
             padding: 40px;
             border-radius: 8px;
@@ -88,6 +80,7 @@ ob_end_flush();
         h2 {
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         form {
@@ -95,15 +88,11 @@ ob_end_flush();
             flex-direction: column;
         }
 
-        input[type=text], input[type=password], input[type=email] {
+        input[type=text], input[type=password] {
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
             border-radius: 4px;
-        }
-
-        input[type=checkbox] {
-            margin-bottom: 15px;
         }
 
         input[type=submit] {
@@ -119,19 +108,28 @@ ob_end_flush();
         input[type=submit]:hover {
             background-color: #3f51b5;
         }
+
+        a {
+            text-align: center;
+            text-decoration: none;
+            color: #333;
+        }
     </style>
+
 </head>
 <body>
-    <div class="container">
-        <div class="register-container">
-            <h2>Sign up</h2>
-            <form action="register.php" method="POST">
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required><br>
-                <input type="submit" value="Sign up">
-            </form>
-        </div>
-    </div>
+
+    <?php if ($error_message): ?>
+        <p><?php echo $error_message; ?></p>
+    <?php endif; ?>
+
+
+    <form method="POST" action=""> <!-- action set to the current file -->
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    <a href="forgot_password.php">Forgot Password?</a>
+
 </body>
 </html>
-

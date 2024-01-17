@@ -108,7 +108,7 @@
                 <img src="https://i.pinimg.com/564x/2c/89/71/2c89714756fe886bb8550d4e647c45f7.jpg" alt="Additional Image" style="max-width: 30%; height: auto;">
             </div>
             <div style="position: absolute; top: 0; right: -260px; margin-top: -1px;">
-                <img src="lightt2.png" alt="Additional Image2" style="max-width: 24%; height: auto;">
+                <img src="assets/lightt2.png" alt="Additional Image2" style="max-width: 24%; height: auto;">
             </div>
         </div>
     </div>
@@ -279,7 +279,7 @@
             <div class="col-md-8 position-relative">
             
                 <video autoplay muted width="800" height="450" style="max-width: 100%; height: auto; margin-bottom: -20px;">
-                    <source src="Untitled.mov" type="video/mp4">
+                    <source src="assets/Untitled.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 
