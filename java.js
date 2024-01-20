@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Search functionality
     const searchIconDiv = document.querySelector('.searchIconDiv');
     const searchInput = document.createElement('input');
     searchInput.setAttribute('type', 'text');
@@ -21,10 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     searchIconDiv.appendChild(searchInput);
-});
 
-
-document.addEventListener('DOMContentLoaded', function () {
+    // Dropdown functionality
     const dropdownBtn = document.querySelector('.dropdown-btn');
     const dropdownBox = document.getElementById('dropdownBox');
 
@@ -37,20 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
             dropdownBox.style.display = 'none';
         }
     });
+
+    // Heart button functionality
+    const heartButtons = document.querySelectorAll('.favorite-button');
+
+    heartButtons.forEach(function (heartButton) {
+        heartButton.addEventListener('click', function () {
+            const isRed = this.style.color === 'red';
+            this.style.color = isRed ? 'black' : 'red';
+        });
+    });
+
 });
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const searchIconDiv = document.querySelector('.searchIconDiv');
-    const searchInput = document.createElement('input');
-    searchInput.setAttribute('type', 'text');
-    searchInput.setAttribute('placeholder', 'Search');
-    searchInput.classList.add('form-control');
-    searchInput.style.display = 'none';
-
-    
-    
-
-    searchIconDiv.appendChild(searchInput);
-});
-
