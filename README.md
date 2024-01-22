@@ -4,7 +4,7 @@ Redesigned Typology Website
 
 Overview
 
-The redesigned Typology website is a platform dedicated to simplifying skincare choices and promoting transparency. It offers a curated selection of skincare products designed for individuals who value clean, minimalist formulations and eco-conscious practices. Typology's commitment to simplicity, authenticity, and sustainability is at the core of its brand identity.
+The redesigned Typology website is a platform dedicated to simplifying skincare choices and promoting transparency. It offers a curated selection of skincare products designed for individuals who value clean, minimalist formulations and eco conscious practices. Typology's commitment to simplicity, authenticity, and sustainability is at the core of its brand identity.
 
 
 Key Features
