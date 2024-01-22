@@ -2,7 +2,7 @@
 session_start();
 $error_message = '';
 
-// Database configuration
+
 $host = "localhost";
 $db_username = "Maya";
 $db_password = "xqeXXyp*-RePcD(R";

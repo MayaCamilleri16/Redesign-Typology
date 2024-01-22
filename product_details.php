@@ -23,7 +23,7 @@ if (isset($_GET['id']) && isset($_GET['source'])) {
 
     $table = ($source === 'facecare') ? 'FaceCare' : 'ByEdit';
 
-    // Prepare the SQL statement to fetch product details from the correct table
+    
     if ($stmt = $conn->prepare("SELECT * FROM {$table} WHERE id = ?")) {
         $stmt->bind_param("i", $productId);
         $stmt->execute();
@@ -39,9 +39,31 @@ if (isset($_GET['id']) && isset($_GET['source'])) {
             $productName = "Product not found";
             $description = "The product you are looking for does not exist.";
             $price = "0";
-            $imageUrl = "path/to/default-image.jpg"; // Path to your default image
+            $imageUrl = "path/to/default-image.jpg"; 
         }
         $stmt->close();
+    }
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'], $_POST['quantity'])) {
+        $productId = $_POST['product_id'];
+        $quantity = $_POST['quantity'];
+    
+        
+        $productId = filter_var($productId, FILTER_SANITIZE_NUMBER_INT);
+        $quantity = filter_var($quantity, FILTER_SANITIZE_NUMBER_INT);
+    
+      
+        if ($productId && $quantity > 0) {
+           
+            if (!isset($_SESSION['cart'][$productId])) {
+                $_SESSION['cart'][$productId] = 0;
+            }
+            $_SESSION['cart'][$productId] += $quantity; 
+    
+            echo 'Product added to cart.';
+        } else {
+            echo 'Invalid product ID or quantity.';
+        }
+       
     }
 }
 
@@ -89,7 +111,7 @@ $conn->close();
         <div class="col-md-6">
             <h2><?php echo $productName; ?></h2>
             
-            <!--  star ratings -->
+            
         
             <div class="star-ratings">
                 <?php
@@ -106,6 +128,13 @@ $conn->close();
             <h3>Description</h3>
             <p><?php echo $description; ?></p>
             <p>Price: € <?php echo $price; ?></p>
+
+
+
+<!-- Quantity  -->
+<label for="quantity">Quantity:</label>
+<input type="number" id="quantity_<?php echo $productId; ?>" name="quantity" value="1" min="1" style="width: 50px;">
+
 
 
 <!--Cart button -->
@@ -184,7 +213,7 @@ $mysqli->close();
         <label for="comment">Review:</label>
         <textarea class="form-control" id="comment" name="comment" rows="3" required></textarea>
     </div>
-    <!-- Add the hidden input field for 'product_id' here -->
+    
     <input type="hidden" name="product_id" value="<?php echo $productId; ?>">
     <button type="submit" class="btn btn-primary">Submit Review</button>
 </form>
@@ -206,6 +235,7 @@ $mysqli->close();
 
 
 
+
     <?php
     include 'footer.php';
     ?>
@@ -216,22 +246,27 @@ $mysqli->close();
 
 <script>
 function addToCart(productId) {
+   
+    var quantity = document.getElementById('quantity_' + productId).value;
+
     var xhr = new XMLHttpRequest();
     xhr.open('POST', 'cart.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function () {
         if (xhr.status === 200) {
-            // Product added to cart successfully
+            
             alert('Product added to cart.');
         } else {
             alert('Error adding product to cart.');
         }
     };
-    xhr.send('product_id=' + productId);
+   
+    xhr.send('product_id=' + productId + '&quantity=' + quantity);
 }
-</script>
 
 </script>
+
+
 
     </body>
     </html>

@@ -77,26 +77,21 @@ include 'navbar.php';
             
 
         <div class="row">
-            <div class="col-md-6">
-                <div class="account-section">
-                    <h2>My Address</h2>
-                    <div class="account-content">
-                        
-                        <p>Shipping Address: Your address details</p>
-                    </div>
-                    <button class="btn btn-primary mt-2">View All</button>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="account-section">
-                    <h2>Sign Out</h2>
-                    <div class="account-content">
-                       
-                      
-                    </div>
-                    <button class="btn btn-primary mt-2">Sign out</button>
-                </div>
+        <div class="col-md-6">
+    <div class="account-section">
+        <h2>Sign Out</h2>
+        <div class="account-content">
+        </div>
+        <!-- Sign Out -->
+        <form action="login.php" method="POST">
+           
+            <input type="submit" class="btn btn-primary mt-2" value="Sign out">
+        </form>
+    </div>
+    <button id="support_button">
+        <a href="contact.php" style="text-decoration: none; color: inherit;">Support</a>
+    </button>
+</div>
             </div>
         </div>
     </div>

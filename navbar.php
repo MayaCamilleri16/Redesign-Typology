@@ -25,6 +25,8 @@ if ($conn->connect_error) {
     } else {
         echo '<a class="nav-link" href="register.php">Register</a>';
     }
+
+    
     ?>
 
 <!DOCTYPE html>
@@ -66,8 +68,9 @@ if ($conn->connect_error) {
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown
 -item" href="facecare.php">Face Care</a></li>
-<li><a class="dropdown-item" href="stageofskinageing.php">Stage of Skin Aging</a></li>
-<li><a class="dropdown-item" href="bodyandhaircare.php">Body and Hair Care</a></li>
+<!-- <li><a class="dropdown-item" href="stageofskinageing.php">Stage of Skin Aging</a></li> -->
+<!-- <li><a class="dropdown-item" href="bodyandhaircare.php">Body and Hair Care</a></li> -->
+
 <li><hr class="dropdown-divider"></li>
 <li><a class="dropdown-item" href="byedit.php">By Edit</a></li>
 </ul>
@@ -90,9 +93,17 @@ if ($conn->connect_error) {
 <div class="navbar-nav navbar-nav-right">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <div class="searchIconDiv">
-                            <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">A magnifying glass icon.</desc><g class="search-path" fill="none" stroke="#848F91"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg>
-                        </div>
+                       <!-- <div class="searchIconDiv">
+    <svg class="svg-icon search-icon" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+        <title id="title">Search Icon</title>
+        <desc id="desc">A magnifying glass icon.</desc>
+        <g class="search-path" fill="none" stroke="#848F91">
+            <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/>
+            <circle cx="8" cy="8" r="7"/>
+        </g>
+    </svg>
+</div> -->
+
                     </li>
                     <li>
 <!-- Favourites -->
@@ -146,11 +157,23 @@ function addToCart(productId) {
 function toggleSideCart(open = false) {
     var cart = document.getElementById('side-cart');
     if (open || cart.classList.contains('visible')) {
-        cart.classList.add('visible');
+       
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'cart.php', true);
+        xhr.onload = function () {
+            if (xhr.status === 200) {
+                cart.innerHTML = xhr.responseText;
+                cart.classList.add('visible');
+            } else {
+                alert('Error fetching cart content.');
+            }
+        };
+        xhr.send();
     } else {
         cart.classList.remove('visible');
     }
 }
+
 </script>
 
 </body>

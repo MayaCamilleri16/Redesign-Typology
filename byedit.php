@@ -67,7 +67,7 @@ $result = mysqli_query($conn, $query);
         <?php
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
-                $productId = $row['id']; // Get the product ID
+                $productId = $row['id']; 
 
              
                 $productName = $row['name'];

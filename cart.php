@@ -18,10 +18,9 @@ if ($mysqli->connect_error) {
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
 }
-
 function calculateTotal($cart, $mysqli) {
     $total = 0;
-    foreach ($cart as $id) {
+    foreach ($cart as $id => $quantity) { // Note that $cart is now an associative array
         $query = "SELECT price FROM Byedit WHERE id = ?";
         $stmt = $mysqli->prepare($query);
         $stmt->bind_param("i", $id);
@@ -29,7 +28,7 @@ function calculateTotal($cart, $mysqli) {
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
             while ($product = $result->fetch_assoc()) {
-                $total += $product['price']; // Add the product price to the total
+                $total += $product['price'] * $quantity; // Multiply by quantity
             }
         }
         $stmt->close();
@@ -38,11 +37,11 @@ function calculateTotal($cart, $mysqli) {
 }
 
 
+
 if (isset($_POST['remove_id'])) {
     $remove_id = $_POST['remove_id'];
     if (($key = array_search($remove_id, $_SESSION['cart'])) !== false) {
         unset($_SESSION['cart'][$key]);
-        // Re-index the array to maintain the correct sequence after removing an item
         $_SESSION['cart'] = array_values($_SESSION['cart']);
     }
 
@@ -68,6 +67,23 @@ if (isset($_POST['product_id'])) {
     }
     
    
+    header("Location: cart.php");
+    exit;
+}
+//quantity
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['product_id'], $_POST['quantity'])) {
+    $product_id = $_POST['product_id'];
+    $quantity = $_POST['quantity'];
+
+    // Validate and sanitize inputs
+    $product_id = filter_var($product_id, FILTER_SANITIZE_NUMBER_INT);
+    $quantity = filter_var($quantity, FILTER_SANITIZE_NUMBER_INT);
+
+    if (!isset($_SESSION['cart'][$product_id])) {
+        $_SESSION['cart'][$product_id] = 0;
+    }
+    $_SESSION['cart'][$product_id] += $quantity; // Add or update the quantity of the product
+
     header("Location: cart.php");
     exit;
 }
@@ -126,13 +142,12 @@ foreach ($_SESSION['cart'] as $id) {
         echo "<div class='cart-total'>Total: €" . $total_price . "</div>";
         ?>
 
-        <!-- Checkout button -->
-        <div class='checkout-button'>
-            <form action='checkout.php' method='post'>
-                <button type='submit' style='width: 100%; padding: 15px; background-color: black; color: white; border: none; border-radius: 5px; cursor: pointer;'>Checkout</button>
-            </form>
-        </div>
-    </div>
+<form action="checkout.php" method="post">
+    <?php foreach ($_SESSION['cart'] as $id): ?>
+        <input type="hidden" name="product_ids[]" value="<?php echo $id; ?>">
+    <?php endforeach; ?>
+    <button type="submit">Checkout</button>
+</form>
 
     <style>
     

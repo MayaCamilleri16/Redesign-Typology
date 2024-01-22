@@ -88,8 +88,10 @@
             </div>
 
             <div class="button-container mt-auto">
-                <button class="explore-button">SHOP TEINTS COLLECTION</button>
-            </div>
+    <a href="teintscollection.php" style="text-decoration: none;">
+        <button class="explore-button">SHOP TEINTS COLLECTION</button>
+    </a>
+</div>
         </div>
 
         <div class="col-md-6 mt-1">
@@ -271,37 +273,63 @@ while ($row = $result->fetch_assoc()) {
 
 
 
-    <div class="big-video-section mt-5 position-relative" style="max-width: 1200px; margin: auto;">
-        <div class="row justify-content-center align-items-center">
+    <!--
+<div class="big-video-section mt-5 position-relative" style="max-width: 1200px; margin: auto;">
+    <div class="row justify-content-center align-items-center">
+    
+        <div class="col-md-8 position-relative">
         
-            <div class="col-md-8 position-relative">
+            <video autoplay muted width="800" height="450" style="max-width: 100%; height: auto; margin-bottom: -20px;">
+                <source src="assets/Untitled.mov" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             
-                <video autoplay muted width="800" height="450" style="max-width: 100%; height: auto; margin-bottom: -20px;">
-                    <source src="assets/Untitled.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                
-                
-                <div class="overlay-text text-center position-absolute top-50 start-50 translate-middle" style="color: rgb(1, 0, 0);">
-                    <div class="big-image-header mb-3" style="font-family: 'Maven Pro', sans-serif;">
-                        <h2>Understand your skin and its complex needs.</h2>
-                    </div>
-                    
-                    
-                    <button class="big-image-body-text btn btn-dark text-center" style="font-family: 'Roboto Mono', monospace; border-radius: 0px;">
-                        
-                        <p class="mb- text-white">BEGIN DIAGNOSTIC TEST</p>
-                    </button>
+            <div class="overlay-text text-center position-absolute top-50 start-50 translate-middle" style="color: rgb(1, 0, 0);">
+                <div class="big-image-header mb-3" style="font-family: 'Maven Pro', sans-serif;">
+                    <h2>Understand your skin and its complex needs.</h2>
                 </div>
+                
+                <button class="big-image-body-text btn btn-dark text-center" style="font-family: 'Roboto Mono', monospace; border-radius: 0px;">
+                    <p class="mb- text-white">BEGIN DIAGNOSTIC TEST</p>
+                </button>
             </div>
         </div>
-        </div>
+    </div>
+</div>
+-->
+
 
     <?php
     include 'footer.php';
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="java.js"></script>
-    
+
+    <script>
+
+document.querySelectorAll('.favorite-button').forEach(item => {
+    item.addEventListener('click', event => {
+        let productId = event.target.getAttribute('data-productid');
+        addToFavorites(productId);
+    })
+});
+
+// Function to handle adding to favorites
+function addToFavorites(productId) {
+    let formData = new FormData();
+    formData.append('product_id', productId);
+
+    fetch('addToFavorites.php', { 
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); 
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+}
+</script>
     </body>
     </html>

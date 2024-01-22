@@ -1,6 +1,9 @@
 <?php
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+
+session_start(); 
 
 $host = "localhost";
 $username = "Maya";
@@ -13,57 +16,52 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    session_start();
+if (isset($_SESSION['user_id'])) {
     $userId = $_SESSION['user_id'];
+} else {
+    // Redirect to login page
+    die("You must be logged in to view favorites.");
+}
 
-    
-    if (isset($_POST['product_id'])) {
-        $productId = $_POST['product_id'];
-
-        $stmt = $conn->prepare("INSERT INTO UserFavourites (UserID, ProductID) VALUES (?, ?)");
-        $stmt->bind_param("ii", $userId, $productId);
-
-        if ($stmt->execute()) {
-            // Product added to favorites 
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-
-        $stmt->close();
+// Handle POST request to add a product to favorites
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_product_id'])) {
+    $productIdToAdd = $_POST['add_product_id'];
+    // Prepare and bind
+    $stmt = $conn->prepare("INSERT INTO UserFavourites (UserID, ProductID) VALUES (?, ?)");
+    $stmt->bind_param("ii", $userId, $productIdToAdd);
+    // Execute and close
+    if ($stmt->execute()) {
+        echo "Product added to favorites";
+    } else {
+        echo "Error: " . $stmt->error;
     }
+    $stmt->close();
+}
 
-   
-    if (isset($_POST['remove_product_id'])) {
-        $productIdToRemove = $_POST['remove_product_id'];
-
-        $stmt = $conn->prepare("DELETE FROM UserFavourites WHERE UserID = ? AND ProductID = ?");
-        $stmt->bind_param("ii", $userId, $productIdToRemove);
-
-        if ($stmt->execute()) {
-            // Product removed from favorites 
-        } else {
-            echo "Error: " . $stmt->error;
-        }
-
-        $stmt->close();
+//  remove a product from favorites
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['remove_product_id'])) {
+    $productIdToRemove = $_POST['remove_product_id'];
+    // Prepare and bind
+    $stmt = $conn->prepare("DELETE FROM UserFavourites WHERE UserID = ? AND ProductID = ?");
+    $stmt->bind_param("ii", $userId, $productIdToRemove);
+    // Execute and close
+    if ($stmt->execute()) {
+        echo "Product removed from favorites";
+    } else {
+        echo "Error: " . $stmt->error;
     }
+    $stmt->close();
 }
 
 $favourites = array();
-if (isset($_SESSION['user_id'])) {
-    $userId = $_SESSION['user_id'];
-    $stmt = $conn->prepare("SELECT p.ProductID, p.Title, p.ImageURL, p.Price FROM UserFavourites uf INNER JOIN Products p ON uf.ProductID = p.ProductID WHERE uf.UserID = ?");
-    if ($stmt) {
-        $stmt->bind_param("i", $userId);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            $favourites[] = $row;
-        }
-        $stmt->close();
-    }
+$stmt = $conn->prepare("SELECT p.product_id, p.product_name, p.product_image_url, p.product_price FROM UserFavourites uf INNER JOIN products p ON uf.ProductID = p.product_id WHERE uf.UserID = ?");
+$stmt->bind_param("i", $userId);
+$stmt->execute();
+$result = $stmt->get_result();
+while ($row = $result->fetch_assoc()) {
+    $favourites[] = $row;
 }
+$stmt->close();
 
 $conn->close();
 ?>
@@ -194,21 +192,22 @@ $conn->close();
     <br></br>
     <br></br>
 
-   
-   <div class="favourite-items-container">
-        <?php foreach ($favourites as $product): ?>
-            <div class="favourite-item">
-                <img src="<?php echo $product['ImageURL']; ?>" alt="<?php echo $product['Title']; ?>">
-                <h3><?php echo $product['Title']; ?></h3>
-                <p><?php echo $product['Price']; ?></p>
-                <!--  remove the product from favorites -->
-                <form method="post">
-                    <input type="hidden" name="remove_product_id" value="<?php echo $product['ProductID']; ?>">
-                    <button type="submit" class="remove-button">Remove from Favorites</button>
-                </form>
-            </div>
-        <?php endforeach; ?>
+      
+       <div class="favourite-items-container">
+    <?php foreach ($favourites as $product): ?>
+        <div class="favourite-item">
+            <img src="<?php echo htmlspecialchars($product['product_image_url']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>">
+            <h3><?php echo htmlspecialchars($product['product_name']); ?></h3>
+            <p><?php echo htmlspecialchars($product['product_price']); ?></p>
+            <!-- remove the product from favorites -->
+            <form method="post">
+                <input type="hidden" name="remove_product_id" value="<?php echo $product['product_id']; ?>">
+                <button type="submit">Remove from Favorites</button>
+            </form>
+        </div>
+    <?php endforeach; ?>
     </div>
+   
     <?php
     include 'footer.php';
     ?>
